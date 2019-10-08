@@ -8,9 +8,44 @@ namespace Connect4
     {
         static void Main(string[] args)
         {
+            var menu2 = new Menu(2)
+            {
+              Title = "Select Board Size",
+              MenuItemsDictionary = new Dictionary<string, MenuItem>()
+              {
+                  {
+                      "1", new MenuItem()
+                      {
+                          Title = "Small Board",
+                          CommandToExecute = null
+                      }
+                  },
+                  {
+                      "2", new MenuItem()
+                      {
+                          Title = "Medium Board",
+                          CommandToExecute = null
+                      }
+                  },
+                  {
+                      "3", new MenuItem()
+                      {
+                          Title = "Large Board",
+                          CommandToExecute = null
+                      }
+                  },
+                  {
+                      "4", new MenuItem()
+                      {
+                          Title = "Custom Board",
+                          CommandToExecute = null
+                      }
+                  }
+              }
+            };
             var menu = new Menu(1)
             {
-                Title = "Connect 4",
+                Title = "Play Connect 4",
                 MenuItemsDictionary = new Dictionary<string, MenuItem>()
                 {
                     {
@@ -24,7 +59,7 @@ namespace Connect4
                         "2", new MenuItem()
                         {
                             Title = "Human Against Human",
-                            CommandToExecute = null
+                            CommandToExecute = menu2.Run
                         }
                     }
                 }

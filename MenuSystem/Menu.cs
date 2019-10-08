@@ -67,9 +67,6 @@ namespace MenuSystem
                 Console.Write(">");
 
                 command = Console.ReadLine().Trim().ToUpper();
-
-
-
                 var rCommand = "";
 
                 if (MenuItemsDictionary.ContainsKey(command))
@@ -77,23 +74,35 @@ namespace MenuSystem
                     var mItem = MenuItemsDictionary[command];
                     if (mItem.CommandToExecute != null)
                     { 
-                        mItem.CommandToExecute();
+                       rCommand = mItem.CommandToExecute();
                         break;
                         
                     }
 
-                    if (command == MenuCommandExit)
-                    {
-                        command = MenuCommandExit;
-                    }
-
-                    if (command == ReturnToMain)
-                    {
-                        _menulevel = 0;
-                    }
-                    
-                    
                 }
+                
+                if (rCommand == MenuCommandExit)
+                {
+                    command = MenuCommandExit;
+                }
+
+                if (rCommand == ReturnToMain)
+                {
+                    if (_menulevel != 0)
+                    {
+                        command = ReturnToMain;
+                    }
+                }
+                
+//                if (rCommand == MenuCommandExit)
+//                {
+//                    command = MenuCommandExit;
+//                }
+//
+//                if (command == ReturnToMain)
+//                {
+//                    _menulevel = 0;
+//                }
 //                else
 //                {
 //                    throw new ArgumentException ("Invalid Command");
