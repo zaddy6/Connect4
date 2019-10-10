@@ -31,14 +31,17 @@ namespace MenuSystem
                
                     if (_menulevel >= 2)
                     {
-                        _menuItemsDictionary.Add(ReturnToPrevious, new MenuItem(){Title = "Return to Previous Menu"}); 
+                        _menuItemsDictionary.Add(ReturnToPrevious, 
+                            new MenuItem(){Title = "Return to Previous Menu"}); 
                     }
 
                     if (_menulevel >= 1)
                     {
-                        _menuItemsDictionary.Add(ReturnToMain, new MenuItem(){Title = "Return to Main Menu", CommandToExecute = Run});
+                        _menuItemsDictionary.Add(ReturnToMain, 
+                            new MenuItem(){Title = "Return to Main Menu"});
                     }
-                    _menuItemsDictionary.Add(MenuCommandExit, new MenuItem(){Title = "Exit"});
+                    _menuItemsDictionary.Add(MenuCommandExit, 
+                        new MenuItem(){Title = "Exit"});
                 
             } 
 
@@ -66,7 +69,7 @@ namespace MenuSystem
                 Console.WriteLine("----------");
                 Console.Write(">");
 
-                command = Console.ReadLine().Trim().ToUpper();
+                command = Console.ReadLine()?.Trim().ToUpper();
                 var rCommand = "";
 
                 if (MenuItemsDictionary.ContainsKey(command))
@@ -75,8 +78,7 @@ namespace MenuSystem
                     if (mItem.CommandToExecute != null)
                     { 
                        rCommand = mItem.CommandToExecute();
-                        break;
-                        
+                       
                     }
 
                 }
@@ -93,27 +95,13 @@ namespace MenuSystem
                         command = ReturnToMain;
                     }
                 }
-                
-//                if (rCommand == MenuCommandExit)
-//                {
-//                    command = MenuCommandExit;
-//                }
-//
-//                if (command == ReturnToMain)
-//                {
-//                    _menulevel = 0;
-//                }
-//                else
-//                {
-//                    throw new ArgumentException ("Invalid Command");
-//                }
+
             } while (command != MenuCommandExit &&
                      command != ReturnToMain &&
                      command != ReturnToPrevious);
 
             return command;
         }
-
 
     }
 }
