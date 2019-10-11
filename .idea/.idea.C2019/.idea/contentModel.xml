@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p=".git/info/exclude" t="IncludeRecursive" />
       <e p="C2019.sln" t="IncludeFlat" />
       <e p="Connect4" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -60,7 +59,6 @@
       <e p="Solution Files" t="Include" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_C2019.1170381903.00" t="ExcludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_C2019.-144158786.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GameEngine;
 using MenuSystem;
+using ConsoleUI;
 
 namespace Connect4
 {
@@ -10,7 +11,7 @@ namespace Connect4
         static void Main(string[] args)
         {
 
-            var game = new Game(4,4);
+           
             
             
             
@@ -24,7 +25,7 @@ namespace Connect4
                       "1", new MenuItem()
                       {
                           Title = "Small Board",
-                          CommandToExecute = null
+                          CommandToExecute = PlayGame.SmallBoard
                       }
                   },
                   {

@@ -4,7 +4,7 @@ namespace GameEngine
 {
     public class Game
     {
-        private Cellstate[,] Board { get; set; }
+        private CellState[,] Board { get; set; }
 
         public int Width { get; set; }
 
@@ -12,36 +12,35 @@ namespace GameEngine
 
         private bool _player0Move = false;
 
-        public Game(int width, int height)
+        public Game(int height, int width)
         {
             if (width < 4 || height < 4)
             {
                 throw new ArgumentException("Board has to be 4x4 at least");
             }
 
-            Width = width;
             Height = height;
-            
-            Board = new Cellstate[width,height];
+            Width = width;
+            Board = new CellState[height,width];
         }
 
-        public Cellstate[,] BoardCopy()
+        public CellState[,] BoardCopy()
         {
-            var result = new Cellstate[Width, Height];
+            var result = new CellState[Height, Width];
             
             Array.Copy(Board, result, Board.Length);
 
             return result;
         }
 
-        public string Move(int x, int y)
+        public string Move(int y, int x)
         {
-            if (Board[x, y] != Cellstate.Empty)
+            if (Board[y, x] != CellState.Empty)
             {
                 return "copy";
             }
 
-            Board[x, y] = _player0Move ? Cellstate.X : Cellstate.O;
+            Board[y, x] = _player0Move ? CellState.X : CellState.O;
             _player0Move = !_player0Move;
 
             return "Ok";
