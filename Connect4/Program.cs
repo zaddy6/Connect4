@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameEngine;
 using MenuSystem;
 
 namespace Connect4
@@ -8,6 +9,12 @@ namespace Connect4
     {
         static void Main(string[] args)
         {
+
+            var game = new Game(4,4);
+            
+            
+            
+            
             var menu2 = new Menu(2)
             {
               Title = "Select Board Size",
